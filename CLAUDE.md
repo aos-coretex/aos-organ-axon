@@ -31,9 +31,9 @@ These pages require ESB organ APIs and will be rebuilt fresh:
 
 | Page | ESB Data Source | Status |
 |---|---|---|
-| Capture Bus | Spine ESB (:4000) | Pending |
-| Continuous Verification | Vigil ESB (:4015) | Pending |
-| Autoheal | Glia ESB (:4016) | Pending |
+| Lobe | Spine ESB (:4000) | Pending |
+| Vigil | Vigil ESB (:4015) | Pending |
+| Glia | Glia ESB (:4016) | Pending |
 | Radiant Dashboard | Radiant ESB (:4006) | Pending |
 | Minder Dashboard | Minder ESB (:4007) | Pending |
 | Syntra Dashboard | Syntra ESB (future) | Pending |

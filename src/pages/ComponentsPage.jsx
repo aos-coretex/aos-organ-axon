@@ -41,14 +41,14 @@ const components = [
     name: 'Spine',
     to: '/components/spine',
     description:
-      'Coretex Agentic Event Bus \u2014 the global event routing primitive. All platform events flow through Spine; consumers like the Memory Capture Bus and Autoheal subscribe to filtered event streams.',
+      'Coretex Agentic Event Bus \u2014 the global event routing primitive. All platform events flow through Spine; consumers like Lobe and Glia subscribe to filtered event streams.',
     badge: 'Bus',
   },
   {
-    name: 'Autoheal',
-    to: '/components/autoheal',
+    name: 'Glia',
+    to: '/components/glia',
     description:
-      'Intelligent self-repair pipeline. Three layers \u2014 strict-dispatcher, smart-dispatcher, and auto-heal executor \u2014 process CV failures as tickets with human escalation for architectural issues.',
+      'Intelligent self-repair pipeline. Three layers \u2014 strict-dispatcher, smart-dispatcher, and auto-heal executor \u2014 process Vigil failures as tickets with human escalation for architectural issues.',
     badge: 'Ops',
   },
 ];

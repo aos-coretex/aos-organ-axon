@@ -84,10 +84,10 @@ const organ = await createOrgan({
     data_driven_pages: 0,
     pending_esb_integrations: [
       'Vigil → Verification page',
-      'Glia → Autoheal page',
+      'Glia → Glia page',
       'Radiant → Radiant dashboard',
       'Minder → Minder dashboard',
-      'Spine → Capture Bus page',
+      'Spine → Lobe page',
     ],
   }),
 

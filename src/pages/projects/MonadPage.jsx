@@ -102,9 +102,9 @@ export default function MonadPage() {
       {/* Cross-cutting tools */}
       <section className={styles.toolStrip}>
         <div className={styles.toolStripInner}>
-          <Link to="/components/monad/capture-bus" className={styles.toolLink}>
-            <span className={styles.toolName}>Memory Capture Bus</span>
-            <span className={styles.toolDescription}>Event-driven capture pipeline routing events to all three Monad legs.</span>
+          <Link to="/components/monad/lobe" className={styles.toolLink}>
+            <span className={styles.toolName}>Lobe</span>
+            <span className={styles.toolDescription}>Event-driven interpretation pipeline routing events to all three Monad legs.</span>
             <span className={styles.cardButton}>Open</span>
           </Link>
         </div>

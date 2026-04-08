@@ -3,14 +3,14 @@ import styles from './SpinePage.module.css';
 
 const consumers = [
   {
-    label: 'MCB',
-    title: 'Memory Capture Bus',
+    label: 'Lobe',
+    title: 'Lobe Event Interpretation',
     text: 'Routes platform events to Radiant (memory/context), Minder (person observations), and the graph (bindings). 44 deterministic triggers across 8 domains.',
   },
   {
-    label: 'Autoheal',
-    title: 'Autoheal Self-Repair',
-    text: 'Consumes CV failure events to create repair tickets. Three-layer intelligent pipeline with human escalation for architectural issues.',
+    label: 'Glia',
+    title: 'Glia Self-Repair',
+    text: 'Consumes Vigil failure events to create repair tickets. Three-layer intelligent pipeline with human escalation for architectural issues.',
   },
   {
     label: 'Future',
@@ -63,7 +63,7 @@ export default function SpinePage() {
             Every platform event &mdash; CV test results, session lifecycle, backup
             completion, remediation outcomes, dream cycles &mdash; flows through Spine.
             Consumers subscribe to the events they care about and process them
-            independently. The Memory Capture Bus (MCB) is a consumer of Spine, not
+            independently. Lobe is a consumer of Spine, not
             the event system itself.
           </p>
         </div>

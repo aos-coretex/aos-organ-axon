@@ -145,7 +145,7 @@
   transform: translateX(3px);
 }
 
-/* Tool strip (Capture Bus link) */
+/* Tool strip (Lobe link) */
 
 .toolStrip {
   padding: 0 var(--space-xl) var(--space-lg);

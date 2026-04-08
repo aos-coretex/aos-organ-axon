@@ -9,19 +9,19 @@ const surfaces = [
       'Browse, search, and dispatch skills, commands, and personas. The operational console for everything the platform can do.',
   },
   {
-    slug: 'monitoring',
-    name: 'Platform Monitoring',
+    slug: 'vigil',
+    name: 'Vigil Monitoring',
     description:
-      'Platform health at a glance — continuous verification across all component groups, freshness tracking, and on-demand test execution.',
+      'Platform health at a glance — Vigil verification across all component groups, freshness tracking, and on-demand test execution.',
   },
 ];
 
 const tools = [
   {
-    slug: 'capture-bus',
-    name: 'Memory Capture Bus',
-    to: '/components/monad/capture-bus',
-    description: 'Event-driven capture pipeline — operational, security, and memory events routed to Radiant, Minder, and the graph.',
+    slug: 'lobe',
+    name: 'Lobe',
+    to: '/components/monad/lobe',
+    description: 'Event-driven interpretation pipeline — operational, security, and memory events routed to Radiant, Minder, and the graph.',
   },
   {
     slug: 'spine-activity',
