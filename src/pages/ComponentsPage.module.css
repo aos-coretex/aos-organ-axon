@@ -1,0 +1,110 @@
+/* Components Landing Page */
+
+.page {
+  min-height: 100%;
+}
+
+/* Hero */
+
+.hero {
+  padding: var(--space-lg) var(--space-xl) var(--space-md);
+}
+
+.heroInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Card grid */
+
+.grid {
+  padding: var(--space-md) var(--space-xl) var(--space-2xl);
+  background-color: var(--color-bg-alt);
+}
+
+.gridInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cardName {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-tertiary);
+  flex: 1;
+}
+
+.cardButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: linear-gradient(to bottom, #f5f4f2, #eae8e5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  align-self: flex-start;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.card:hover .cardButton {
+  background: linear-gradient(to bottom, #eeedeb, #e3e1dd);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  transform: translateX(3px);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .gridInner {
+    grid-template-columns: 1fr;
+  }
+}
