@@ -14,6 +14,13 @@ import BluboxPage from './pages/projects/BluboxPage';
 import SentiencePage from './pages/projects/SentiencePage';
 import NnetcastPage from './pages/projects/NnetcastPage';
 import ControlPage from './pages/ControlPage';
+import OrganHealthPage from './pages/esb/OrganHealthPage';
+import MessageFlowPage from './pages/esb/MessageFlowPage';
+import MailboxMonitorPage from './pages/esb/MailboxMonitorPage';
+import VigilResultsPage from './pages/esb/VigilResultsPage';
+import GliaTicketsPage from './pages/esb/GliaTicketsPage';
+import GovernanceStatusPage from './pages/esb/GovernanceStatusPage';
+import JobLifecyclePage from './pages/esb/JobLifecyclePage';
 
 export default function App() {
   return (
@@ -36,6 +43,15 @@ export default function App() {
         <Route path="components/monad" element={<MonadPage />} />
         <Route path="components/graphheight" element={<GraphheightDashboard />} />
         <Route path="components/spine" element={<SpinePage />} />
+
+        {/* ESB — data-driven dashboard pages (MP-16 v6t-6) */}
+        <Route path="esb/organs" element={<OrganHealthPage />} />
+        <Route path="esb/flows" element={<MessageFlowPage />} />
+        <Route path="esb/mailboxes" element={<MailboxMonitorPage />} />
+        <Route path="esb/vigil" element={<VigilResultsPage />} />
+        <Route path="esb/glia" element={<GliaTicketsPage />} />
+        <Route path="esb/governance" element={<GovernanceStatusPage />} />
+        <Route path="esb/jobs" element={<JobLifecyclePage />} />
 
         {/* Control — operations landing */}
         <Route path="control" element={<ControlPage />} />

@@ -20,6 +20,7 @@ import config from './config.js';
 import { initUiWebSocket, getClientCount } from './ws/ui-ws.js';
 import { handleAxonCommand, pushToUiClients, createDispatchRoutes } from './handlers/spine-commands.js';
 import { createApiRouter } from './routes/api.js';
+import { createEsbRouter } from './routes/esb.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distPath = path.join(__dirname, '..', 'dist');
@@ -53,6 +54,10 @@ const organ = await createOrgan({
 
     app.use('/api', apiRouter);
 
+    // ESB dashboard routes — data-driven pages via Spine OTMs (MP-16 v6t-6)
+    const esbRouter = createEsbRouter(() => spineRef, config);
+    app.use('/api/esb', esbRouter);
+
     // Static file serving for React SPA (after API routes)
     app.use(express.static(distPath));
 
@@ -81,13 +86,15 @@ const organ = await createOrgan({
   introspectCheck: async () => ({
     ui_ws_clients: getClientCount(),
     transferred_pages: 15,
-    data_driven_pages: 0,
-    pending_esb_integrations: [
-      'Vigil → Verification page',
-      'Glia → Glia page',
-      'Radiant → Radiant dashboard',
-      'Minder → Minder dashboard',
-      'Spine → Lobe page',
+    data_driven_pages: 7,
+    esb_pages: [
+      'Organ Health Dashboard',
+      'Message Flow Visualization',
+      'Spine Mailbox Monitor',
+      'Vigil Results',
+      'Glia Tickets',
+      'Governance Status',
+      'Job Lifecycle',
     ],
   }),
 
