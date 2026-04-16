@@ -21,6 +21,9 @@ import { initUiWebSocket, getClientCount } from './ws/ui-ws.js';
 import { handleAxonCommand, pushToUiClients, createDispatchRoutes } from './handlers/spine-commands.js';
 import { createApiRouter } from './routes/api.js';
 import { createEsbRouter } from './routes/esb.js';
+import { createControlRouter } from './routes/control.js';
+import { createPlatformHealthRouter } from './routes/platform-health.js';
+import { createConfigLlmAssignmentsRouter } from './routes/config-llm-assignments.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distPath = path.join(__dirname, '..', 'dist');
@@ -57,6 +60,17 @@ const organ = await createOrgan({
     // ESB dashboard routes — data-driven pages via Spine OTMs (MP-16 v6t-6)
     const esbRouter = createEsbRouter(() => spineRef, config);
     app.use('/api/esb', esbRouter);
+
+    // Control Surface routes — operator monitoring (relay a7u-8)
+    app.use('/api/control', createControlRouter(config));
+
+    // Platform Health routes (relay a7u-9) — transferred from monolith /api/verification/*
+    app.use('/api/control/platform-health', createPlatformHealthRouter(() => spineRef));
+
+    // LLM assignments aggregator (relay l9m-8) — fans out to the 11
+    // probabilistic organs' /introspect and exposes the roll-up for the
+    // OrganMonitoringPage "Assigned LLM" per-card attribute.
+    app.use('/api/config', createConfigLlmAssignmentsRouter());
 
     // Static file serving for React SPA (after API routes)
     app.use(express.static(distPath));
