@@ -1,0 +1,197 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 420px;
+  max-width: 90vw;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  overflow-y: auto;
+  padding: var(--space-xl);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+}
+
+.closeBtn {
+  font-size: var(--text-2xl);
+  color: var(--color-text-tertiary);
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+/* Sections */
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Definition grid */
+
+.defGrid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 4px var(--space-md);
+}
+
+.defLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  font-weight: var(--weight-medium);
+}
+
+.defValue {
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  font-family: 'SF Mono', monospace;
+}
+
+.listSection {
+  margin-top: var(--space-sm);
+}
+
+.depList {
+  margin-top: 2px;
+  padding-left: var(--space-md);
+  list-style: disc;
+}
+
+.depList li {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-family: 'SF Mono', monospace;
+}
+
+/* Timeline dots */
+
+.timeline {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: default;
+}
+
+/* History list */
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.historyRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: 2px 0;
+}
+
+.historyDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.historyStatus {
+  font-weight: var(--weight-medium);
+  width: 50px;
+}
+
+.historyTime {
+  width: 60px;
+}
+
+.historyDuration {
+  width: 50px;
+  font-variant-numeric: tabular-nums;
+}
+
+.historyTrigger {
+  font-style: italic;
+  color: var(--color-text-tertiary);
+}
+
+/* Run button */
+
+.runBtn {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-surface);
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  transition: background var(--transition-fast);
+}
+
+.runBtn:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Output */
+
+.output {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-family: 'SF Mono', monospace;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--color-text-secondary);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.empty {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}

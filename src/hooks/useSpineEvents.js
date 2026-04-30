@@ -18,7 +18,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 const RECONNECT_BASE = 1000;
 const RECONNECT_MAX = 30000;
 
-export default function useSpineEvents() {
+export default function useSpineEvents() { return useSpineEventsImpl(); }
+
+export { useSpineEventsImpl as useSpineEvents };
+
+function useSpineEventsImpl() {
   const [connected, setConnected] = useState(false);
   const [lastEvent, setLastEvent] = useState(null);
   const listenersRef = useRef(new Map());

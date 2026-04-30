@@ -1,0 +1,271 @@
+/* Vigil Monitoring Dashboard */
+
+.page {
+  min-height: 100%;
+  padding-bottom: var(--space-4xl);
+}
+
+/* Header */
+
+.header {
+  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+}
+
+.headerInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.backLink {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-lg);
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+.headerTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.headerSubtitle {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Auto-refresh toggle (matching LobeInterpreter) */
+
+.refreshToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.refreshToggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.refreshActive {
+  border-color: #5a9a5a;
+  color: #5a9a5a;
+}
+
+.pulseDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5a9a5a;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.staticDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-text-tertiary);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Run All button */
+
+.runAllBtn {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-surface);
+  background: var(--color-accent);
+  border-radius: 9999px;
+  padding: var(--space-xs) var(--space-lg);
+  transition: background var(--transition-fast);
+}
+
+.runAllBtn:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.runAllBtn:disabled {
+  cursor: default;
+}
+
+.runAllActive {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-text-tertiary);
+  animation: runAllPulse 1.5s ease-in-out infinite;
+}
+
+.runAllSpinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: runAllSpin 0.7s linear infinite;
+}
+
+@keyframes runAllSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes runAllPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Summary section */
+
+.summarySection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* C2A-04: Organ Health metrics section */
+
+.organHealthSection {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--space-xl);
+}
+
+.organHealthHeader {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-sm);
+}
+
+.organHealthGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-sm);
+}
+
+/* Filter tabs */
+
+.filterSection {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--space-xl);
+}
+
+.filterTabs {
+  display: flex;
+  gap: 2px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  width: fit-content;
+}
+
+.filterTab {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.filterTab:hover {
+  color: var(--color-text-primary);
+}
+
+.filterTabActive {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Card grid section */
+
+.gridSection {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--space-xl);
+}
+
+.groupBlock {
+  margin-bottom: var(--space-xl);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+/* Loading & Error */
+
+.error {
+  text-align: center;
+  padding: var(--space-3xl);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "confirmed": {
+    "Spine": true,
+    "Graph": true,
+    "Radiant": true,
+    "Minder": true,
+    "Arbiter": true,
+    "Nomos": true,
+    "Cerberus": true,
+    "Senate": true,
+    "Cortex": true,
+    "Thalamus": true,
+    "Receptor": true,
+    "ModelBroker": true,
+    "Vectr": true,
+    "Phi": true,
+    "Hippocampus": true,
+    "Soul": true,
+    "Lobe": true,
+    "Syntra": true,
+    "Vigil": true,
+    "Glia": true,
+    "SafeVault": true,
+    "GitSync": true,
+    "Promote": true,
+    "Sourcegraph": true,
+    "Engram": true,
+    "MCP-Router": true,
+    "MCP-Gateway": true,
+    "Axon": true
+  }
+}

@@ -7,7 +7,7 @@
 - **Profile:** Deterministic
 - **Version:** 0.1.0
 - **Ports:** 4051 (AOS) / 3951 (SAAS)
-- **Vite dev:** 4050
+- **Vite dev:** 5173 (moved off 4050 in relay a7u-8 — 4050 is Receptor's AOS port)
 
 ## What This Is
 
@@ -48,7 +48,7 @@ npm install       # Install dependencies
 npm test          # Run 23 unit tests
 npm run build     # Build React SPA to dist/
 npm start         # Start organ (requires Spine + dependencies)
-npm run dev       # Vite dev server (port 4050, proxies to 4051)
+npm run dev       # Vite dev server (port 5173, proxies to 4051)
 ```
 
 ## Architecture

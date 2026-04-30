@@ -14,6 +14,8 @@ import BluboxPage from './pages/projects/BluboxPage';
 import SentiencePage from './pages/projects/SentiencePage';
 import NnetcastPage from './pages/projects/NnetcastPage';
 import ControlPage from './pages/ControlPage';
+import OrganMonitoringPage from './pages/control/OrganMonitoringPage';
+import PlatformHealthPage from './pages/control/PlatformHealthPage';
 import OrganHealthPage from './pages/esb/OrganHealthPage';
 import MessageFlowPage from './pages/esb/MessageFlowPage';
 import MailboxMonitorPage from './pages/esb/MailboxMonitorPage';
@@ -55,6 +57,8 @@ export default function App() {
 
         {/* Control — operations landing */}
         <Route path="control" element={<ControlPage />} />
+        <Route path="control/organ-monitoring" element={<OrganMonitoringPage />} />
+        <Route path="control/platform-health" element={<PlatformHealthPage />} />
 
         {/* Legacy redirects (retained for bookmark compatibility) */}
         <Route path="projects/monad" element={<Navigate to="/components/monad" replace />} />

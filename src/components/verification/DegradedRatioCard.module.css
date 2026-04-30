@@ -1,0 +1,144 @@
+/* DegradedRatioCard — C2A-04 Cortex degraded-iteration ratio metric card */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+/* Status bar at bottom */
+.statusBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.statusGreen  { background: var(--cv-pass); }
+.statusYellow { background: var(--cv-blocked); }
+.statusRed    { background: var(--cv-fail); }
+.statusInert  { background: var(--cv-unknown); }
+
+/* Header row */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.windowToggle {
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.windowToggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Primary ratio display */
+.ratioRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.ratio {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.ratioGreen  { color: var(--cv-pass); }
+.ratioYellow { color: var(--cv-blocked); }
+.ratioRed    { color: var(--cv-fail); }
+.ratioInert  { color: var(--color-text-tertiary); }
+
+.ratioSuffix {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  font-weight: var(--weight-medium);
+}
+
+/* Iteration count */
+.iterationRow {
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Flag breakdown (tooltip-like expandable) */
+.breakdown {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.breakdownTitle {
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.flagRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: 1px 0;
+}
+
+.flagName {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+}
+
+.flagCount {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-tertiary);
+}
+
+/* Error / unreachable state */
+.errorState {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+
+.errorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cv-unknown);
+  flex-shrink: 0;
+}

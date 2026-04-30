@@ -50,19 +50,24 @@ export function pushToUiClients(envelope) {
  * Send a directed OTM to another organ via Spine.
  * Used when the human triggers an action in the UI.
  *
+ * Spine's OTM schema requires `event_type` and `source` to be nested INSIDE
+ * `payload`, alongside the caller's domain `data`. Envelope-level fields
+ * are limited to `type`, `source_organ`, `target_organ` (plus optional
+ * `correlation_id` / `reply_to`). Placing `event_type` at the envelope
+ * level causes Spine to reject with SCHEMA_VALIDATION_FAILED.
+ *
  * @param {object} spine - SpineClient instance
  * @param {string} targetOrgan - Destination organ name
- * @param {string} eventType - OTM event type
- * @param {object} payload - OTM payload
+ * @param {string} eventType - OTM event type (lands in payload.event_type)
+ * @param {object} data - Domain data for the target handler (lands in payload.data)
  * @returns {Promise<object>} - Spine send result
  */
-export async function sendCommand(spine, targetOrgan, eventType, payload) {
+export async function sendCommand(spine, targetOrgan, eventType, data) {
   return spine.send({
     type: 'OTM',
     source_organ: 'Axon',
     target_organ: targetOrgan,
-    event_type: eventType,
-    payload,
+    payload: { event_type: eventType, source: 'Axon', data: data ?? {} },
   });
 }
 

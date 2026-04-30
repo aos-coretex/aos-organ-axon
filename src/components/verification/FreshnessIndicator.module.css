@@ -1,0 +1,10 @@
+.indicator {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+}
+
+.live { color: var(--cv-pass); }
+.recent { color: #6bc76b; }
+.aging { color: var(--cv-blocked); }
+.stale { color: var(--cv-stale); }
+.dead { color: var(--cv-unknown); }
