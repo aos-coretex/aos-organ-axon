@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS
+.DS_Store
+
+# Environment
+.env
+.env.local
+
+# LLM-Ops knowledge exporter convention files
+.llm-ops-src-activity-log.md
+llm-ops-src-man2ai-dev-notes.md
+llm-ops-agent-local-reference.md
+
+# Database (if any test fixtures)
+data/*.db
