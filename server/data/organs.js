@@ -1,7 +1,7 @@
 /**
  * Organ registry — the 28 organs of the DIO ESB.
  *
- * Source of truth: MDvault-LLM-Ops/01-Organs/00-Organ-Registry/organ-registry.md
+ * Source of truth: MDvault-DIO-artifacts/01-Organs/00-Organ-Registry/organ-registry.md
  * Embedded here so the control surface aggregator can poll each organ's /health
  * without a circular dependency on another organ.
  *
